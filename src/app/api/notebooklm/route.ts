@@ -4,69 +4,58 @@ const NOTEBOOK_ID = process.env.NLM_NOTEBOOK_ID || '50629322-985f-4561-ad3a-3c6c
 
 const MODE_PREFIXES: Record<string, string> = {
   brief:
-    'Answer as a numbered list. Each item starts with a bold key phrase. Maximum 4-5 items. Keep each item to 1-2 sentences. Be precise and clinical.\n\nQuestion: ',
+    'Answer as a numbered list. Each item starts with a bold key phrase. Maximum 4-5 items. Example format:\n1. **Key phrase** rest of the point.\n2. **Key phrase** rest of the point.\n\n',
   explanatory:
-    'Answer as a numbered list. Each item must start with a bold key phrase followed by a detailed explanation. Provide clinical context, guideline class/level where relevant, and practical implications. Maximum 6-8 items.\n\nQuestion: ',
+    'Answer as a numbered list. Each item must start with a bold key phrase summarizing that point. Example format:\n1. **Key phrase** rest of the explanation.\n2. **Key phrase** rest of the explanation.\nUse this numbered+bold format for all points.\n\n',
 }
 
 export async function POST(req: NextRequest) {
   try {
-    const { question, mode = 'brief', conversationId } = await req.json()
+    const { question, conversationId, mode } = await req.json()
 
     if (!question || typeof question !== 'string') {
       return NextResponse.json({ error: 'Question is required' }, { status: 400 })
     }
 
-    const proxyUrl = process.env.NLM_PROXY_URL
-    const proxyKey = process.env.NLM_PROXY_KEY
+    const proxyUrl = process.env.NLM_PROXY_URL || 'http://localhost:3847'
+    const apiKey = process.env.NLM_PROXY_KEY || 'cto-coach-2026'
 
-    if (!proxyUrl) {
-      return NextResponse.json({ error: 'NLM_PROXY_URL not configured' }, { status: 500 })
-    }
-
-    const prefix = MODE_PREFIXES[mode] || MODE_PREFIXES.brief
+    const prefix = MODE_PREFIXES[mode as string] ?? ''
     const fullQuestion = prefix + question
 
-    const body: Record<string, unknown> = {
-      question: fullQuestion,
-      notebookId: NOTEBOOK_ID,
-    }
-
-    if (conversationId) {
-      body.conversationId = conversationId
-    }
-
-    const headers: Record<string, string> = {
-      'Content-Type': 'application/json',
-    }
-
-    if (proxyKey) {
-      headers['Authorization'] = `Bearer ${proxyKey}`
-    }
-
-    const response = await fetch(proxyUrl, {
+    const response = await fetch(`${proxyUrl}/query`, {
       method: 'POST',
-      headers,
-      body: JSON.stringify(body),
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': apiKey,
+      },
+      body: JSON.stringify({
+        notebook_id: NOTEBOOK_ID,
+        question: fullQuestion,
+        conversation_id: conversationId ?? undefined,
+      }),
     })
 
     if (!response.ok) {
-      const text = await response.text()
-      console.error('NLM proxy error:', response.status, text)
+      const errorText = await response.text()
+      console.error('nlm-proxy error:', response.status, errorText)
       return NextResponse.json(
-        { error: `Proxy returned ${response.status}` },
-        { status: response.status }
+        { error: 'Failed to query NotebookLM' },
+        { status: 502 }
       )
     }
 
     const data = await response.json()
 
     return NextResponse.json({
-      answer: data.answer || data.response || 'No response received.',
-      conversationId: data.conversationId || null,
+      answer: data.answer ?? '',
+      conversationId: data.conversation_id ?? data.conversationId ?? null,
     })
   } catch (error) {
-    console.error('NotebookLM API error:', error)
-    return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
+    console.error('Chat API error:', error)
+    return NextResponse.json(
+      { error: 'Internal server error' },
+      { status: 500 }
+    )
   }
 }
