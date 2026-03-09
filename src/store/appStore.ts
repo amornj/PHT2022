@@ -46,15 +46,19 @@ interface AppState {
   diagnosisStep: number
   setDiagnosisStep: (step: number) => void
 
-  // Treatment tab
+  // Treatment section (top-level: group1, groups235, group4)
+  treatmentSection: string
+  setTreatmentSection: (section: string) => void
+
+  // Treatment tab (sub-tabs within Group 1 PAH)
   treatmentTab: string
   setTreatmentTab: (tab: string) => void
 
-  // Groups tab
+  // Groups tab (sub-tabs within Groups 2/3/5)
   groupsTab: string
   setGroupsTab: (tab: string) => void
 
-  // CTEPH tab
+  // CTEPH tab (sub-tabs within Group 4)
   ctephTab: string
   setCtephTab: (tab: string) => void
 
@@ -91,6 +95,9 @@ export const useAppStore = create<AppState>()(
       diagnosisStep: 0,
       setDiagnosisStep: (step) => set({ diagnosisStep: step }),
 
+      treatmentSection: 'group1',
+      setTreatmentSection: (section) => set({ treatmentSection: section }),
+
       treatmentTab: 'vasoreactivity',
       setTreatmentTab: (tab) => set({ treatmentTab: tab }),
 
@@ -108,6 +115,7 @@ export const useAppStore = create<AppState>()(
         risk: defaultRisk,
         classificationTab: 'definitions',
         diagnosisStep: 0,
+        treatmentSection: 'group1',
         treatmentTab: 'vasoreactivity',
         groupsTab: 'group2',
         ctephTab: 'diagnosis',

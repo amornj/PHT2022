@@ -12,9 +12,7 @@ const navItems = [
   { href: '/diagnosis', label: 'Diagnosis', icon: '🔍' },
   { href: '/hemodynamics', label: 'Hemodynamics', icon: '📊' },
   { href: '/risk', label: 'Risk Stratification', icon: '⚠️' },
-  { href: '/pah-treatment', label: 'PAH Treatment', icon: '💊' },
-  { href: '/groups', label: 'Groups 2/3/5', icon: '🫁' },
-  { href: '/cteph', label: 'CTEPH (Group 4)', icon: '🩸' },
+  { href: '/treatment', label: 'Treatment', icon: '💊' },
   { href: '/special', label: 'Special Scenarios', icon: '⭐' },
   { href: '/ask', label: 'Ask NotebookLM', icon: '🤖' },
 ]

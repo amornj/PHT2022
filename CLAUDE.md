@@ -24,9 +24,7 @@ src/
 │   ├── diagnosis/          # 3-step algorithm: suspicion→detection→confirmation
 │   ├── hemodynamics/       # RHC calculator with auto-classification
 │   ├── risk/               # 3-strata (diagnosis) + 4-strata (follow-up)
-│   ├── pah-treatment/      # Vasoreactivity, initial/sequential therapy, drugs
-│   ├── groups/             # Groups 2/3/5 management
-│   ├── cteph/              # Group 4: PEA, BPA, riociguat
+│   ├── treatment/          # Unified treatment: PAH (Group 1), Groups 2/3/5, CTEPH (Group 4)
 │   ├── special/            # CTD, portal HTN, HIV, CHD, pediatric, ICU
 │   ├── ask/                # NotebookLM AI chat
 │   └── api/notebooklm/    # NLM proxy route
@@ -43,11 +41,9 @@ src/
 3. **Diagnosis** (/diagnosis) — Suspicion (symptoms/signs), Detection (echo probability table, V/Q), Confirmation (RHC, vasoreactivity)
 4. **Hemodynamics** (/hemodynamics) — Input RHC values → auto-classify PH phenotype, calculate PVR/CI/TPG/DPG
 5. **Risk Stratification** (/risk) — Three-strata model at diagnosis, four-strata model at follow-up (Tables 16, 18)
-6. **PAH Treatment** (/pah-treatment) — Vasoreactivity/CCB, initial combo therapy, sequential escalation, drug dosing table, general measures
-7. **Groups 2/3/5** (/groups) — PH-LHD, PH-lung disease, Group 5 with DO/DON'T cards
-8. **CTEPH** (/cteph) — V/Q-first diagnosis, PEA/BPA/riociguat algorithm, follow-up
-9. **Special Scenarios** (/special) — CTD-PAH, portal HTN, HIV, CHD, pediatric PH, ICU/RV failure
-10. **Ask NotebookLM** (/ask) — AI chat with brief/explanatory modes, read aloud
+6. **Treatment** (/treatment) — Unified treatment page with 3 sections: PAH (Group 1) with vasoreactivity/CCB, initial/sequential therapy, drug dosing; Groups 2/3/5 with LHD, lung, multifactorial; CTEPH (Group 4) with PEA/BPA/riociguat
+7. **Special Scenarios** (/special) — CTD-PAH, portal HTN, HIV, CHD, pediatric PH, ICU/RV failure
+8. **Ask NotebookLM** (/ask) — AI chat with brief/explanatory modes, read aloud
 
 ## Design
 - Primary: #003366 (dark blue)

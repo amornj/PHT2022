@@ -32,25 +32,11 @@ const sections = [
     color: 'border-yellow-500',
   },
   {
-    href: '/pah-treatment',
-    title: 'PAH Treatment',
-    desc: 'Vasoreactivity, CCB, initial & sequential combination therapy, escalation',
+    href: '/treatment',
+    title: 'Treatment',
+    desc: 'PAH (Group 1), Groups 2/3/5, CTEPH (Group 4) — all treatment algorithms',
     icon: '💊',
     color: 'border-red-500',
-  },
-  {
-    href: '/groups',
-    title: 'Groups 2 / 3 / 5',
-    desc: 'PH-LHD, PH-lung disease, group 5 — what to do and what NOT to do',
-    icon: '🫁',
-    color: 'border-teal-500',
-  },
-  {
-    href: '/cteph',
-    title: 'CTEPH (Group 4)',
-    desc: 'V/Q-first diagnosis, PEA, BPA, riociguat, multimodality treatment',
-    icon: '🩸',
-    color: 'border-orange-500',
   },
   {
     href: '/special',
