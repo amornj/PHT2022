@@ -9,6 +9,7 @@ const tabs = [
   { id: 'ph-lhd', label: 'PH-LHD' },
   { id: 'copd-ph', label: 'PHT-COPD' },
   { id: 'ph-ild', label: 'PH-ILD' },
+  { id: 'fvc-dlco', label: 'FVC/DLCO' },
   { id: 'portal', label: 'Portal HTN' },
   { id: 'hiv', label: 'HIV' },
   { id: 'chd', label: 'CHD' },
@@ -691,6 +692,113 @@ export default function SpecialPage() {
                   <Image src="/images/ph-ild-figure3.png" alt="PH-ILD figure 3" width={1600} height={900} className="w-full h-auto" />
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {specialTab === 'fvc-dlco' && (
+        <div className="space-y-4">
+          <div className="card border-l-4 border-l-indigo-600 bg-indigo-50/40">
+            <h2 className="card-header text-indigo-800">FVC / DLCO Pattern Recognition</h2>
+            <p className="text-sm text-gray-700 mb-2">
+              This tab helps clinicians use <strong>spirometry + DLCO</strong> as a quick bedside pattern-recognition tool
+              when differentiating <strong>COPD</strong>, <strong>ILD</strong>, <strong>obesity restriction</strong>,
+              <strong>PH-LHD</strong>, <strong>PAH</strong>, and possible <strong>PVOD</strong>.
+            </p>
+            <div className="p-3 bg-white rounded border border-indigo-100 text-xs text-gray-700">
+              <strong>Important:</strong> this is a heuristic clinical algorithm, not a stand-alone diagnostic test.
+              Always integrate echo, imaging, hemodynamics, oxygenation, and full clinical context.
+            </div>
+          </div>
+
+          <div className="card">
+            <h2 className="card-header">Quick Algorithm</h2>
+            <div className="space-y-3 text-xs text-gray-700">
+              <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
+                <h3 className="font-semibold text-slate-800 text-sm mb-2">Step 1 — Check FEV1/FVC</h3>
+                <ul className="space-y-1">
+                  <li>• <strong>FEV1/FVC &lt;0.7</strong> → think <strong>COPD</strong></li>
+                  <li>• <strong>FEV1/FVC normal</strong> → move to FVC</li>
+                </ul>
+              </div>
+
+              <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
+                <h3 className="font-semibold text-slate-800 text-sm mb-2">Step 2 — Check FVC</h3>
+                <ul className="space-y-1">
+                  <li>• <strong>FVC &lt;80%</strong> → restriction branch</li>
+                  <li>• <strong>FVC normal</strong> → preserved volume branch</li>
+                </ul>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="p-3 bg-blue-50 rounded-lg border border-blue-100">
+                  <h3 className="font-semibold text-blue-800 text-sm mb-2">If FVC &lt;80%</h3>
+                  <ul className="space-y-1 text-xs text-gray-700">
+                    <li>• <strong>DLCO low</strong> → think <strong>ILD</strong></li>
+                    <li>• <strong>DLCO normal</strong> → think <strong>obesity restriction</strong></li>
+                  </ul>
+                </div>
+                <div className="p-3 bg-green-50 rounded-lg border border-green-100">
+                  <h3 className="font-semibold text-green-800 text-sm mb-2">If FVC normal</h3>
+                  <ul className="space-y-1 text-xs text-gray-700">
+                    <li>• <strong>DLCO &gt;70%</strong> → think <strong>normal</strong> or <strong>PH-LHD</strong></li>
+                    <li>• <strong>DLCO 40–70%</strong> → check <strong>FVC/DLCO</strong></li>
+                    <li>• <strong>DLCO &lt;40%</strong> → also check <strong>FVC/DLCO</strong></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="card">
+            <h2 className="card-header">How to Interpret FVC / DLCO Ratio</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="p-3 bg-amber-50 rounded-lg border border-amber-100">
+                <h3 className="font-semibold text-amber-800 text-sm mb-2">DLCO 40–70%</h3>
+                <ul className="space-y-1 text-xs text-gray-700">
+                  <li>• <strong>FVC/DLCO &gt;1.6</strong> → supports <strong>PAH</strong></li>
+                  <li>• <strong>FVC/DLCO &lt;1.6</strong> → more in keeping with <strong>PH-LHD</strong></li>
+                </ul>
+              </div>
+              <div className="p-3 bg-red-50 rounded-lg border border-red-100">
+                <h3 className="font-semibold text-red-800 text-sm mb-2">DLCO &lt;40%</h3>
+                <ul className="space-y-1 text-xs text-gray-700">
+                  <li>• <strong>FVC/DLCO 1.6–2.2</strong> → think <strong>severe PAH</strong></li>
+                  <li>• <strong>FVC/DLCO &gt;2.5</strong> → consider <strong>PVOD</strong></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="card">
+            <h2 className="card-header">Clinical Pearls</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
+                <h3 className="font-semibold text-slate-800 text-sm">COPD clue</h3>
+                <p className="text-xs text-gray-700 mt-1">An obstructive pattern (FEV1/FVC &lt;0.7) should push you toward COPD before jumping to vascular explanations.</p>
+              </div>
+              <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
+                <h3 className="font-semibold text-slate-800 text-sm">ILD clue</h3>
+                <p className="text-xs text-gray-700 mt-1">Restrictive physiology plus reduced DLCO strongly supports an ILD phenotype rather than isolated vascular disease.</p>
+              </div>
+              <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
+                <h3 className="font-semibold text-slate-800 text-sm">PVOD clue</h3>
+                <p className="text-xs text-gray-700 mt-1">Very low DLCO with markedly high FVC/DLCO ratio should trigger suspicion for PVOD, especially if hypoxemia and CT signs support it.</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="card">
+            <h2 className="card-header">Reference Figure</h2>
+            <div className="rounded-lg overflow-hidden border border-slate-200 bg-white">
+              <Image
+                src="/images/fvc-dlco-algorithm.png"
+                alt="FVC DLCO differential algorithm"
+                width={1600}
+                height={900}
+                className="w-full h-auto"
+              />
             </div>
           </div>
         </div>
