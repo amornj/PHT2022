@@ -8,6 +8,7 @@ const tabs = [
   { id: 'ipah-lung', label: 'IPAH Lung Phenotype' },
   { id: 'ph-lhd', label: 'PH-LHD' },
   { id: 'copd-ph', label: 'PHT-COPD' },
+  { id: 'ph-ild', label: 'PH-ILD' },
   { id: 'portal', label: 'Portal HTN' },
   { id: 'hiv', label: 'HIV' },
   { id: 'chd', label: 'CHD' },
@@ -580,6 +581,116 @@ export default function SpecialPage() {
                 height={900}
                 className="w-full h-auto"
               />
+            </div>
+          </div>
+        </div>
+      )}
+
+      {specialTab === 'ph-ild' && (
+        <div className="space-y-4">
+          <div className="card border-l-4 border-l-violet-600 bg-violet-50/40">
+            <h2 className="card-header text-violet-800">PH-ILD: Why This Is Different</h2>
+            <p className="text-sm text-gray-700 mb-2">
+              PH associated with interstitial lung disease carries a <strong>poor prognosis</strong> and should not be treated like classic PAH.
+              The central issue is deciding whether PH is proportional to the ILD burden or reflects a stronger pulmonary vascular phenotype.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-2 text-xs">
+              <div className="p-2 bg-white rounded border border-violet-100"><strong>Poor prognosis</strong><br />PH worsens exercise capacity, RV burden, and survival</div>
+              <div className="p-2 bg-white rounded border border-violet-100"><strong>Different treatment logic</strong><br />ILD optimization + oxygen + rehab come first</div>
+              <div className="p-2 bg-white rounded border border-violet-100"><strong>Not PAH</strong><br />Systemic vasodilators often disappoint or worsen gas exchange</div>
+            </div>
+          </div>
+
+          <div className="card">
+            <h2 className="card-header">Why PH-ILD Is Distinct</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="p-3 bg-blue-50 rounded-lg border border-blue-100">
+                <h3 className="font-semibold text-blue-800 text-sm mb-2">Core pathobiology</h3>
+                <ul className="text-xs text-gray-700 space-y-1">
+                  <li>• Parenchymal fibrosis and gas exchange impairment are central</li>
+                  <li>• Hypoxic vasoconstriction + vascular remodeling both matter</li>
+                  <li>• V/Q mismatch risk is a major treatment issue</li>
+                </ul>
+              </div>
+              <div className="p-3 bg-red-50 rounded-lg border border-red-100">
+                <h3 className="font-semibold text-red-800 text-sm mb-2">Why this is not PAH</h3>
+                <ul className="text-xs text-gray-700 space-y-1">
+                  <li>• Exercise limitation is mixed ventilatory + circulatory</li>
+                  <li>• Systemic pulmonary vasodilators often have weak or harmful results</li>
+                  <li>• Treatment begins with the ILD, not with PAH-drug reflexes</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="card">
+            <h2 className="card-header">High-Yield Clinical Pearls</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="p-3 bg-amber-50 rounded-lg border border-amber-100">
+                <h3 className="font-semibold text-amber-800 text-sm">When to suspect vascular burden out of proportion</h3>
+                <ul className="text-xs text-gray-700 mt-1 space-y-1">
+                  <li>• RV strain seems too severe for the amount of fibrosis</li>
+                  <li>• DLCO is markedly depressed</li>
+                  <li>• Symptoms are worse than PFT/HRCT alone would predict</li>
+                  <li>• CPFE-like pattern with preserved volumes but severe gas-transfer abnormality</li>
+                </ul>
+              </div>
+              <div className="p-3 bg-green-50 rounded-lg border border-green-100">
+                <h3 className="font-semibold text-green-800 text-sm">Best-supported targeted therapy</h3>
+                <ul className="text-xs text-gray-700 mt-1 space-y-1">
+                  <li>• <strong>Inhaled treprostinil</strong> is the key modern positive signal in PH-ILD</li>
+                  <li>• It differs from the largely disappointing history of many systemic vasodilators</li>
+                  <li>• Still integrate this with full ILD and oxygen strategy</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="card">
+            <h2 className="card-header">Practical Management</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
+                <h3 className="font-semibold text-slate-800 text-sm">What to do</h3>
+                <ul className="text-xs text-gray-700 mt-1 space-y-1">
+                  <li>• Optimize ILD-directed therapy when available</li>
+                  <li>• Long-term oxygen when indicated</li>
+                  <li>• Pulmonary rehabilitation</li>
+                  <li>• Consider transplant referral in advanced disease</li>
+                  <li>• Refer severe/disproportionate phenotypes to expert PH centers</li>
+                </ul>
+              </div>
+              <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
+                <h3 className="font-semibold text-slate-800 text-sm">What not to do</h3>
+                <ul className="text-xs text-gray-700 mt-1 space-y-1">
+                  <li>• Do not assume PH-ILD should follow PAH treatment logic</li>
+                  <li>• Be cautious with systemic vasodilators because of V/Q mismatch risk</li>
+                  <li>• Do not underestimate prognosis just because fibrosis already explains symptoms</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="card">
+            <h2 className="card-header">Key Figures</h2>
+            <div className="space-y-4">
+              <div>
+                <p className="text-sm text-gray-600 mb-2">Figure 1</p>
+                <div className="rounded-lg overflow-hidden border border-slate-200 bg-white">
+                  <Image src="/images/ph-ild-figure1.png" alt="PH-ILD figure 1" width={1600} height={900} className="w-full h-auto" />
+                </div>
+              </div>
+              <div>
+                <p className="text-sm text-gray-600 mb-2">Figure 2</p>
+                <div className="rounded-lg overflow-hidden border border-slate-200 bg-white">
+                  <Image src="/images/ph-ild-figure2.png" alt="PH-ILD figure 2" width={1600} height={900} className="w-full h-auto" />
+                </div>
+              </div>
+              <div>
+                <p className="text-sm text-gray-600 mb-2">Figure 3</p>
+                <div className="rounded-lg overflow-hidden border border-slate-200 bg-white">
+                  <Image src="/images/ph-ild-figure3.png" alt="PH-ILD figure 3" width={1600} height={900} className="w-full h-auto" />
+                </div>
+              </div>
             </div>
           </div>
         </div>
