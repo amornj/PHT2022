@@ -6,6 +6,7 @@ const tabs = [
   { id: 'ctd', label: 'CTD-PAH' },
   { id: 'ipah-lung', label: 'IPAH Lung Phenotype' },
   { id: 'ph-lhd', label: 'PH-LHD' },
+  { id: 'copd-ph', label: 'PHT-COPD' },
   { id: 'portal', label: 'Portal HTN' },
   { id: 'hiv', label: 'HIV' },
   { id: 'chd', label: 'CHD' },
@@ -437,6 +438,94 @@ export default function SpecialPage() {
                   <li>• Group 2 PH is common, but not simple</li>
                   <li>• The key mistake is overcalling PAH</li>
                   <li>• Correct diagnosis changes everything</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {specialTab === 'copd-ph' && (
+        <div className="space-y-4">
+          <div className="card border-l-4 border-l-amber-600 bg-amber-50/40">
+            <h2 className="card-header text-amber-800">PHT-COPD: Why This Is Different</h2>
+            <p className="text-sm text-gray-700 mb-2">
+              Pulmonary hypertension in COPD is usually <strong>not classic PAH</strong>. It carries a <strong>poor prognosis</strong>,
+              often reflects mixed hypoxic / vascular / parenchymal disease, and usually shows a <strong>weak or absent response to pulmonary vasodilators</strong>.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-2 text-xs">
+              <div className="p-2 bg-white rounded border border-amber-100"><strong>Poor prognosis</strong><br />Even modest PH worsens survival and RV burden</div>
+              <div className="p-2 bg-white rounded border border-amber-100"><strong>Different treatment logic</strong><br />Optimize COPD / oxygen first, not PAH-drug reflex</div>
+              <div className="p-2 bg-white rounded border border-amber-100"><strong>Different threshold nuance</strong><br />PVR &gt;5 WU is especially useful for severe vascular phenotype</div>
+            </div>
+          </div>
+
+          <div className="card">
+            <h2 className="card-header">Why COPD-PH Is Not Group 1 PAH</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="p-3 bg-blue-50 rounded-lg border border-blue-100">
+                <h3 className="font-semibold text-blue-800 text-sm mb-2">Typical COPD-PH biology</h3>
+                <ul className="text-xs text-gray-700 space-y-1">
+                  <li>• Chronic hypoxic vasoconstriction</li>
+                  <li>• Capillary bed loss / vascular pruning</li>
+                  <li>• Vascular remodeling on top of lung disease</li>
+                  <li>• Mixed ventilatory + circulatory limitation</li>
+                </ul>
+              </div>
+              <div className="p-3 bg-red-50 rounded-lg border border-red-100">
+                <h3 className="font-semibold text-red-800 text-sm mb-2">Why vasodilators disappoint</h3>
+                <ul className="text-xs text-gray-700 space-y-1">
+                  <li>• Hemodynamic gain does not guarantee functional gain</li>
+                  <li>• Can worsen <strong>V/Q mismatch</strong> and oxygenation</li>
+                  <li>• Trials have mostly been neutral or harmful</li>
+                  <li>• This is very different from classic PAH logic</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="card">
+            <h2 className="card-header">Recognizing the Severe Pulmonary Vascular Phenotype</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="p-3 bg-purple-50 rounded-lg border border-purple-100">
+                <h3 className="font-semibold text-purple-800 text-sm">What to look for</h3>
+                <ul className="text-xs text-gray-700 mt-1 space-y-1">
+                  <li>• RV burden out of proportion to spirometry</li>
+                  <li>• Very low DLCO</li>
+                  <li>• Severe hemodynamics despite only moderate airflow limitation</li>
+                  <li>• Symptoms worse than expected from lung mechanics alone</li>
+                </ul>
+              </div>
+              <div className="p-3 bg-green-50 rounded-lg border border-green-100">
+                <h3 className="font-semibold text-green-800 text-sm">PVR cut-off nuance</h3>
+                <ul className="text-xs text-gray-700 mt-1 space-y-1">
+                  <li>• Modern precapillary PH definition uses <strong>PVR &gt;2 WU</strong></li>
+                  <li>• In COPD, the more clinically important severe vascular phenotype often aligns better with <strong>PVR &gt;5 WU</strong></li>
+                  <li>• This higher threshold is useful for identifying disproportionate disease and worse prognosis</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="card">
+            <h2 className="card-header">Practical Management</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
+                <h3 className="font-semibold text-slate-800 text-sm">What to do</h3>
+                <ul className="text-xs text-gray-700 mt-1 space-y-1">
+                  <li>• Optimize inhaled COPD therapy</li>
+                  <li>• Use long-term oxygen when indicated</li>
+                  <li>• Pulmonary rehabilitation</li>
+                  <li>• Treat sleep-disordered breathing if present</li>
+                  <li>• Refer severe / disproportionate cases to PH expert centers</li>
+                </ul>
+              </div>
+              <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
+                <h3 className="font-semibold text-slate-800 text-sm">What not to do</h3>
+                <ul className="text-xs text-gray-700 mt-1 space-y-1">
+                  <li>• Do not assume COPD-PH should be treated like Group 1 PAH</li>
+                  <li>• Do not overcall mild COPD-PH as severe vascular disease without full phenotype review</li>
+                  <li>• Be cautious about pulmonary vasodilators outside expert-selected cases / trials</li>
                 </ul>
               </div>
             </div>
