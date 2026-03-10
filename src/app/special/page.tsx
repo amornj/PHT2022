@@ -4,6 +4,7 @@ import { useAppStore } from '@/store/appStore'
 
 const tabs = [
   { id: 'ctd', label: 'CTD-PAH' },
+  { id: 'ipah-lung', label: 'IPAH Lung Phenotype' },
   { id: 'portal', label: 'Portal HTN' },
   { id: 'hiv', label: 'HIV' },
   { id: 'chd', label: 'CHD' },
@@ -148,6 +149,121 @@ export default function SpecialPage() {
                   <li>• <strong>Sotatercept</strong> is promising, but telangiectasia / bleeding issues may matter more in CTD patients</li>
                   <li>• Early transplant planning is important in progressive disease</li>
                   <li>• Esophageal dysmotility / aspiration risk can complicate transplant candidacy in SSc</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {specialTab === 'ipah-lung' && (
+        <div className="space-y-4">
+          <div className="card border-l-4 border-l-amber-500 bg-amber-50/40">
+            <h2 className="card-header text-amber-800">IPAH Lung Phenotype Warning</h2>
+            <p className="text-sm text-gray-700 mb-2">
+              Some patients who meet hemodynamic criteria for <strong>IPAH</strong> may actually behave more like
+              <strong> Group 3 PH</strong> when they have a <strong>smoking history</strong> and <strong>DLCO &lt;45%</strong>.
+              The Lancet registry analysis suggests these patients are not classical IPAH.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-2 text-xs">
+              <div className="p-2 bg-white rounded border border-amber-100"><strong>Older</strong><br />Usually ~70 years</div>
+              <div className="p-2 bg-white rounded border border-amber-100"><strong>Smoking exposed</strong><br />Current or former smoker</div>
+              <div className="p-2 bg-white rounded border border-amber-100"><strong>Gas transfer signal</strong><br />Very low DLCO despite limited CT change</div>
+            </div>
+          </div>
+
+          <div className="card">
+            <h2 className="card-header">How to Recognize the Lung Phenotype</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="p-3 bg-blue-50 rounded-lg border border-blue-100">
+                <h3 className="font-semibold text-blue-800 text-sm mb-2">Typical Pattern</h3>
+                <ul className="text-xs text-gray-700 space-y-1">
+                  <li>• Smoking history</li>
+                  <li>• <strong>DLCO &lt;45%</strong> predicted</li>
+                  <li>• Often normal / near-normal spirometry</li>
+                  <li>• Minimal or only mild parenchymal CT changes</li>
+                  <li>• Older age and more often male than classical IPAH</li>
+                </ul>
+              </div>
+              <div className="p-3 bg-red-50 rounded-lg border border-red-100">
+                <h3 className="font-semibold text-red-800 text-sm mb-2">Why It Matters</h3>
+                <ul className="text-xs text-gray-700 space-y-1">
+                  <li>• Prognosis is much worse than classical IPAH</li>
+                  <li>• Response to PAH therapy is weaker</li>
+                  <li>• Clinical behavior resembles <strong>Group 3 PH</strong> more than classical IPAH</li>
+                  <li>• Do not reflexively assume this is standard Group 1 biology</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="card">
+            <h2 className="card-header">Classical IPAH vs IPAH Lung Phenotype</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="p-3 bg-green-50 rounded-lg border border-green-100">
+                <h3 className="font-semibold text-green-800 text-sm">Classical IPAH</h3>
+                <ul className="text-xs text-gray-700 mt-1 space-y-1">
+                  <li>• Younger</li>
+                  <li>• More often female</li>
+                  <li>• Better treatment response</li>
+                  <li>• Better long-term survival</li>
+                  <li>• DLCO usually not profoundly reduced</li>
+                </ul>
+              </div>
+              <div className="p-3 bg-orange-50 rounded-lg border border-orange-100">
+                <h3 className="font-semibold text-orange-800 text-sm">IPAH with Lung Phenotype</h3>
+                <ul className="text-xs text-gray-700 mt-1 space-y-1">
+                  <li>• Older, often male</li>
+                  <li>• Smoking-related background</li>
+                  <li>• Markedly low DLCO</li>
+                  <li>• Much smaller improvement in WHO FC / 6MWD / NT-proBNP</li>
+                  <li>• Survival approaches Group 3 PH</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="card">
+            <h2 className="card-header">Registry Signal: Therapy Response & Survival</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
+                <h3 className="font-semibold text-slate-800 text-sm mb-2">Response at First Follow-up (COMPERA)</h3>
+                <ul className="text-xs text-gray-700 space-y-1">
+                  <li>• WHO class improvement: <strong>54%</strong> classical IPAH vs <strong>26%</strong> lung phenotype</li>
+                  <li>• 6MWD gain: <strong>63 m</strong> vs <strong>25 m</strong></li>
+                  <li>• NT-proBNP reduction: <strong>58%</strong> vs <strong>27%</strong></li>
+                </ul>
+              </div>
+              <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
+                <h3 className="font-semibold text-slate-800 text-sm mb-2">Survival Signal</h3>
+                <ul className="text-xs text-gray-700 space-y-1">
+                  <li>• 5-year survival classical IPAH: <strong>~80–84%</strong></li>
+                  <li>• 5-year survival lung phenotype: <strong>~21–31%</strong></li>
+                  <li>• Very close to published Group 3 PH survival</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="card">
+            <h2 className="card-header">Practical Approach</h2>
+            <div className="space-y-3">
+              <div className="p-3 bg-indigo-50 rounded-lg border border-indigo-100">
+                <h3 className="font-semibold text-indigo-800 text-sm">When to suspect it</h3>
+                <ul className="text-xs text-gray-700 mt-1 space-y-1">
+                  <li>• Older patient labeled IPAH</li>
+                  <li>• Smoking history</li>
+                  <li>• DLCO profoundly reduced out of proportion to spirometry</li>
+                  <li>• Minimal CT abnormalities but unexpectedly poor treatment response</li>
+                </ul>
+              </div>
+              <div className="p-3 bg-purple-50 rounded-lg border border-purple-100">
+                <h3 className="font-semibold text-purple-800 text-sm">Clinical mindset</h3>
+                <ul className="text-xs text-gray-700 mt-1 space-y-1">
+                  <li>• Re-check whether the patient truly fits classical Group 1 IPAH</li>
+                  <li>• Think of this as a possible <strong>smoking-related pulmonary vascular phenotype</strong></li>
+                  <li>• Set expectations: poorer response and poorer prognosis than classical IPAH</li>
+                  <li>• Trial evidence is still limited — avoid overconfidence with standard PAH escalation</li>
                 </ul>
               </div>
             </div>
