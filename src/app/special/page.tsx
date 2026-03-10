@@ -25,12 +25,12 @@ export default function SpecialPage() {
       <h1 className="text-2xl font-bold text-primary mb-2">Special Scenarios</h1>
       <p className="text-sm text-gray-600 mb-4">Specific PAH subsets and critical care management</p>
 
-      <div className="flex gap-1 mb-4 overflow-x-auto">
+      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-1 mb-4">
         {tabs.map((t) => (
           <button
             key={t.id}
             onClick={() => setSpecialTab(t.id)}
-            className={`tab-btn whitespace-nowrap ${specialTab === t.id ? 'tab-btn-active' : 'tab-btn-inactive'}`}
+            className={`tab-btn text-center ${specialTab === t.id ? 'tab-btn-active' : 'tab-btn-inactive'}`}
           >
             {t.label}
           </button>
