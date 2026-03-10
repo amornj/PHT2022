@@ -312,24 +312,31 @@ export default function SpecialPage() {
           </div>
 
           <div className="card">
-            <h2 className="card-header">Phenotyping: IpcPH vs CpcPH</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <h2 className="card-header">Phenotyping: Clear Definition of IpcPH vs CpcPH</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
               <div className="p-3 bg-green-50 rounded-lg border border-green-100">
-                <h3 className="font-semibold text-green-800 text-sm">IpcPH</h3>
+                <h3 className="font-semibold text-green-800 text-sm">IpcPH = Isolated Post-capillary PH</h3>
                 <ul className="text-xs text-gray-700 mt-1 space-y-1">
-                  <li>• Mainly passive elevation from left-sided filling pressure</li>
-                  <li>• Less pulmonary vascular remodeling</li>
-                  <li>• Think decongestion / HF optimization first</li>
+                  <li>• <strong>mPAP &gt;20 mmHg</strong></li>
+                  <li>• <strong>PAWP &gt;15 mmHg</strong></li>
+                  <li>• <strong>PVR ≤2 WU</strong></li>
+                  <li>• Main mechanism = passive backward transmission of elevated left-sided filling pressure</li>
+                  <li>• Think congestion / HFpEF / valvular disease first</li>
                 </ul>
               </div>
               <div className="p-3 bg-purple-50 rounded-lg border border-purple-100">
-                <h3 className="font-semibold text-purple-800 text-sm">CpcPH</h3>
+                <h3 className="font-semibold text-purple-800 text-sm">CpcPH = Combined Post- and Pre-capillary PH</h3>
                 <ul className="text-xs text-gray-700 mt-1 space-y-1">
-                  <li>• Post-capillary PH + elevated PVR / pulmonary vascular disease</li>
-                  <li>• More severe RV burden and worse trajectory</li>
-                  <li>• Still not equal to classic PAH</li>
+                  <li>• <strong>mPAP &gt;20 mmHg</strong></li>
+                  <li>• <strong>PAWP &gt;15 mmHg</strong></li>
+                  <li>• <strong>PVR &gt;2 WU</strong></li>
+                  <li>• Means left-sided filling pressure problem <strong>plus pulmonary vascular remodeling</strong></li>
+                  <li>• Usually worse RV burden, worse exercise limitation, and worse prognosis than IpcPH</li>
                 </ul>
               </div>
+            </div>
+            <div className="p-3 bg-slate-50 rounded-lg border border-slate-200 text-xs text-gray-700">
+              <strong>Clinical pearl:</strong> CpcPH is <em>not</em> classic PAH. It is still Group 2 PH, but with a stronger pulmonary vascular component.
             </div>
           </div>
 
@@ -342,15 +349,49 @@ export default function SpecialPage() {
                   <li>• Identify underlying cardiac disease first</li>
                   <li>• Use echo, LA / LV clues, and HFpEF probability tools</li>
                   <li>• Confirm with RHC</li>
-                  <li>• Use provocative testing when phenotype remains uncertain</li>
+                  <li>• If PAWP is borderline or phenotype remains uncertain, use provocative testing</li>
                 </ul>
               </div>
               <div className="p-3 bg-red-50 rounded-lg border border-red-100">
-                <h3 className="font-semibold text-red-800 text-sm">Provocative testing matters</h3>
+                <h3 className="font-semibold text-red-800 text-sm">When provocative testing is useful</h3>
                 <ul className="text-xs text-gray-700 mt-1 space-y-1">
-                  <li>• Fluid challenge and exercise RHC can unmask occult PH-LHD</li>
-                  <li>• Resting values may underestimate left-sided filling pressure problems</li>
+                  <li>• Older patient with HFpEF risk factors but resting PAWP not clearly elevated</li>
+                  <li>• Suspected occult left heart disease despite precapillary-looking hemodynamics</li>
+                  <li>• Discordance between symptoms / imaging and resting RHC</li>
                   <li>• Borderline wedge should not falsely reassure you</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="card">
+            <h2 className="card-header">Provocative Testing: Practical How-To</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="p-3 bg-blue-50 rounded-lg border border-blue-100">
+                <h3 className="font-semibold text-blue-800 text-sm">1. Fluid Loading</h3>
+                <ul className="text-xs text-gray-700 mt-1 space-y-1">
+                  <li>• Perform during RHC in expert setting</li>
+                  <li>• Give <strong>500 mL normal saline over 5–10 min</strong></li>
+                  <li>• Re-measure PAWP immediately after infusion</li>
+                  <li>• <strong>PAWP &gt;18 mmHg</strong> after fluid loading supports occult PH-LHD / HFpEF physiology</li>
+                </ul>
+              </div>
+              <div className="p-3 bg-amber-50 rounded-lg border border-amber-100">
+                <h3 className="font-semibold text-amber-800 text-sm">2. Passive Leg Raise</h3>
+                <ul className="text-xs text-gray-700 mt-1 space-y-1">
+                  <li>• Useful bedside / cath-lab preload maneuver</li>
+                  <li>• Raise legs to ~45° from semi-recumbent position</li>
+                  <li>• Watch for rise in PAWP / filling pressure surrogates</li>
+                  <li>• Less validated than formal saline challenge, but can support suspicion of preload-sensitive occult HFpEF</li>
+                </ul>
+              </div>
+              <div className="p-3 bg-green-50 rounded-lg border border-green-100">
+                <h3 className="font-semibold text-green-800 text-sm">3. Exercise Testing</h3>
+                <ul className="text-xs text-gray-700 mt-1 space-y-1">
+                  <li>• Best done as <strong>exercise RHC</strong> in specialized centers</li>
+                  <li>• Consider when rest hemodynamics are borderline but history strongly suggests HFpEF / Group 2 PH</li>
+                  <li>• Look for abnormal rise in PAWP with exercise</li>
+                  <li>• Combine with clinical context, echo, CPET, and LA/LV phenotype</li>
                 </ul>
               </div>
             </div>
