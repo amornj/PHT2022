@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { useAppStore } from '@/store/appStore'
 
 const tabs = [
@@ -528,6 +529,23 @@ export default function SpecialPage() {
                   <li>• Be cautious about pulmonary vasodilators outside expert-selected cases / trials</li>
                 </ul>
               </div>
+            </div>
+          </div>
+
+          <div className="card">
+            <h2 className="card-header">Figure 2: Suggested Approach to COPD-PH</h2>
+            <p className="text-sm text-gray-600 mb-3">
+              This figure highlights the chapter's practical management logic: supportive therapy and COPD optimization first,
+              with expert-center referral and selective consideration of advanced pathways only in carefully phenotyped severe cases.
+            </p>
+            <div className="rounded-lg overflow-hidden border border-slate-200 bg-white">
+              <Image
+                src="/images/copd-figure2.png"
+                alt="Figure 2 approach to pulmonary hypertension in COPD"
+                width={1600}
+                height={900}
+                className="w-full h-auto"
+              />
             </div>
           </div>
         </div>
