@@ -5,6 +5,7 @@ import { useAppStore } from '@/store/appStore'
 const tabs = [
   { id: 'ctd', label: 'CTD-PAH' },
   { id: 'ipah-lung', label: 'IPAH Lung Phenotype' },
+  { id: 'ph-lhd', label: 'PH-LHD' },
   { id: 'portal', label: 'Portal HTN' },
   { id: 'hiv', label: 'HIV' },
   { id: 'chd', label: 'CHD' },
@@ -264,6 +265,137 @@ export default function SpecialPage() {
                   <li>• Think of this as a possible <strong>smoking-related pulmonary vascular phenotype</strong></li>
                   <li>• Set expectations: poorer response and poorer prognosis than classical IPAH</li>
                   <li>• Trial evidence is still limited — avoid overconfidence with standard PAH escalation</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {specialTab === 'ph-lhd' && (
+        <div className="space-y-4">
+          <div className="card border-l-4 border-l-blue-700 bg-blue-50/40">
+            <h2 className="card-header text-blue-800">PH-LHD (Group 2) Core Warning</h2>
+            <p className="text-sm text-gray-700 mb-2">
+              Pulmonary hypertension due to left heart disease is a <strong>phenotyping-first problem</strong>.
+              The hardest real-world error is misclassifying <strong>PH-HFpEF</strong> as true PAH.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-2 text-xs">
+              <div className="p-2 bg-white rounded border border-blue-100"><strong>IpcPH</strong><br />Passive post-capillary pressure transmission</div>
+              <div className="p-2 bg-white rounded border border-blue-100"><strong>CpcPH</strong><br />Post-capillary PH plus pulmonary vascular remodeling</div>
+              <div className="p-2 bg-white rounded border border-blue-100"><strong>Diagnostic trap</strong><br />Resting wedge may miss occult HFpEF</div>
+            </div>
+          </div>
+
+          <div className="card">
+            <h2 className="card-header">Why PH-LHD Is Difficult</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
+                <h3 className="font-semibold text-slate-800 text-sm mb-2">Common problems</h3>
+                <ul className="text-xs text-gray-700 space-y-1">
+                  <li>• PH-LHD is common but heterogeneous</li>
+                  <li>• PH-HFpEF can mimic PAH</li>
+                  <li>• A single resting PAWP value can be misleading</li>
+                  <li>• Atrial arrhythmia / LA dysfunction often point toward Group 2 biology</li>
+                </ul>
+              </div>
+              <div className="p-3 bg-amber-50 rounded-lg border border-amber-100">
+                <h3 className="font-semibold text-amber-800 text-sm mb-2">When to think Group 2 first</h3>
+                <ul className="text-xs text-gray-700 space-y-1">
+                  <li>• Older patient with HFpEF phenotype</li>
+                  <li>• Hypertension, obesity, diabetes, AF</li>
+                  <li>• Left atrial enlargement / diastolic dysfunction</li>
+                  <li>• Valvular heart disease or cardiomyopathy</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="card">
+            <h2 className="card-header">Phenotyping: IpcPH vs CpcPH</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="p-3 bg-green-50 rounded-lg border border-green-100">
+                <h3 className="font-semibold text-green-800 text-sm">IpcPH</h3>
+                <ul className="text-xs text-gray-700 mt-1 space-y-1">
+                  <li>• Mainly passive elevation from left-sided filling pressure</li>
+                  <li>• Less pulmonary vascular remodeling</li>
+                  <li>• Think decongestion / HF optimization first</li>
+                </ul>
+              </div>
+              <div className="p-3 bg-purple-50 rounded-lg border border-purple-100">
+                <h3 className="font-semibold text-purple-800 text-sm">CpcPH</h3>
+                <ul className="text-xs text-gray-700 mt-1 space-y-1">
+                  <li>• Post-capillary PH + elevated PVR / pulmonary vascular disease</li>
+                  <li>• More severe RV burden and worse trajectory</li>
+                  <li>• Still not equal to classic PAH</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="card">
+            <h2 className="card-header">How to Clarify the Diagnosis</h2>
+            <div className="space-y-3">
+              <div className="p-3 bg-indigo-50 rounded-lg border border-indigo-100">
+                <h3 className="font-semibold text-indigo-800 text-sm">Stepwise approach</h3>
+                <ul className="text-xs text-gray-700 mt-1 space-y-1">
+                  <li>• Identify underlying cardiac disease first</li>
+                  <li>• Use echo, LA / LV clues, and HFpEF probability tools</li>
+                  <li>• Confirm with RHC</li>
+                  <li>• Use provocative testing when phenotype remains uncertain</li>
+                </ul>
+              </div>
+              <div className="p-3 bg-red-50 rounded-lg border border-red-100">
+                <h3 className="font-semibold text-red-800 text-sm">Provocative testing matters</h3>
+                <ul className="text-xs text-gray-700 mt-1 space-y-1">
+                  <li>• Fluid challenge and exercise RHC can unmask occult PH-LHD</li>
+                  <li>• Resting values may underestimate left-sided filling pressure problems</li>
+                  <li>• Borderline wedge should not falsely reassure you</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="card">
+            <h2 className="card-header">Treatment Nuance</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="p-3 bg-blue-50 rounded-lg border border-blue-100">
+                <h3 className="font-semibold text-blue-800 text-sm">What to treat</h3>
+                <ul className="text-xs text-gray-700 mt-1 space-y-1">
+                  <li>• Volume and congestion</li>
+                  <li>• Rhythm / atrial disease</li>
+                  <li>• Valvular disease</li>
+                  <li>• Guideline-directed HF therapy</li>
+                </ul>
+              </div>
+              <div className="p-3 bg-red-50 rounded-lg border border-red-100">
+                <h3 className="font-semibold text-red-800 text-sm">What to avoid</h3>
+                <ul className="text-xs text-gray-700 mt-1 space-y-1">
+                  <li>• Do not reflexively use PAH drugs for Group 2 PH</li>
+                  <li>• Most PAH-targeted therapy trials in PH-LHD have been neutral or harmful</li>
+                  <li>• Fluid retention / worsening HF is a real risk</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="card">
+            <h2 className="card-header">Future / Advanced Perspective</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
+                <h3 className="font-semibold text-slate-800 text-sm">What the field needs</h3>
+                <ul className="text-xs text-gray-700 mt-1 space-y-1">
+                  <li>• Better IpcPH vs CpcPH phenotyping</li>
+                  <li>• More longitudinal RHC / MRI / CPET data</li>
+                  <li>• Better biomarkers and phenomapping</li>
+                </ul>
+              </div>
+              <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
+                <h3 className="font-semibold text-slate-800 text-sm">Clinical takeaway</h3>
+                <ul className="text-xs text-gray-700 mt-1 space-y-1">
+                  <li>• Group 2 PH is common, but not simple</li>
+                  <li>• The key mistake is overcalling PAH</li>
+                  <li>• Correct diagnosis changes everything</li>
                 </ul>
               </div>
             </div>
