@@ -423,6 +423,40 @@ export default function SpecialPage() {
           </div>
 
           <div className="card">
+            <h2 className="card-header">Key Figures</h2>
+            <div className="space-y-4">
+              <div>
+                <p className="text-sm text-gray-600 mb-2">
+                  Figure 1 helps visualize the conceptual spectrum from isolated post-capillary PH to combined post- and pre-capillary PH.
+                </p>
+                <div className="rounded-lg overflow-hidden border border-slate-200 bg-white">
+                  <Image
+                    src="/images/ph-lhd-figure1.png"
+                    alt="PH-LHD conceptual figure"
+                    width={1600}
+                    height={900}
+                    className="w-full h-auto"
+                  />
+                </div>
+              </div>
+              <div>
+                <p className="text-sm text-gray-600 mb-2">
+                  Figure 2 highlights the practical diagnostic pathway and where provocative testing helps uncover occult PH-LHD / PH-HFpEF.
+                </p>
+                <div className="rounded-lg overflow-hidden border border-slate-200 bg-white">
+                  <Image
+                    src="/images/ph-lhd-figure2.png"
+                    alt="PH-LHD diagnostic figure"
+                    width={1600}
+                    height={900}
+                    className="w-full h-auto"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="card">
             <h2 className="card-header">Future / Advanced Perspective</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
