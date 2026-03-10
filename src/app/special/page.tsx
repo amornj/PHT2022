@@ -33,30 +33,121 @@ export default function SpecialPage() {
 
       {specialTab === 'ctd' && (
         <div className="space-y-4">
-          <div className="card">
-            <h2 className="card-header">CTD-Associated PAH (Rec Table 15)</h2>
-            <p className="text-sm text-gray-600 mb-3">
-              Systemic sclerosis (SSc) is the most common CTD causing PAH. SLE, MCTD also associated.
+          <div className="card border-l-4 border-l-red-600 bg-red-50/40">
+            <h2 className="card-header text-red-800">CTD-PH Warning: Not All CTD-PH Is Group 1 PAH</h2>
+            <p className="text-sm text-gray-700 mb-2">
+              In connective tissue disease, pulmonary hypertension can fit <strong>Group 1, 2, 3, or 4</strong> — and some patients overlap.
+              Correct phenotyping matters because PAH drugs help <strong>Group 1</strong> but may worsen congestion, gas exchange,
+              or edema in <strong>Group 2/3</strong> and can be risky in <strong>PVOD-like disease</strong>.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="p-3 bg-red-50 rounded-lg">
-                <h3 className="font-semibold text-red-800 text-sm">SSc-PAH</h3>
-                <ul className="text-xs text-gray-700 mt-1 space-y-1">
-                  <li>• Prevalence 5–12% of SSc patients</li>
-                  <li>• Worse prognosis than IPAH</li>
-                  <li>• Annual echo screening recommended (Class I)</li>
-                  <li>• DETECT algorithm for early detection</li>
-                  <li>• May have concomitant ILD → careful phenotyping</li>
-                  <li>• Treat per PAH algorithm — same drug classes</li>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-2 text-xs">
+              <div className="p-2 bg-white rounded border border-red-100"><strong>Group 1</strong><br />True CTD-PAH</div>
+              <div className="p-2 bg-white rounded border border-red-100"><strong>Group 2</strong><br />Myocardial / valvular / diastolic disease</div>
+              <div className="p-2 bg-white rounded border border-red-100"><strong>Group 3</strong><br />ILD / hypoxia / overlap lung disease</div>
+              <div className="p-2 bg-white rounded border border-red-100"><strong>Group 4</strong><br />CTEPH / thromboembolic phenotype</div>
+            </div>
+          </div>
+
+          <div className="card">
+            <h2 className="card-header">CTD-PAH Phenotyping & Clinical Nuance</h2>
+            <p className="text-sm text-gray-600 mb-3">
+              Systemic sclerosis (SSc) is the dominant CTD-PAH phenotype in Western practice, but SLE, MCTD, pSS, RA,
+              and inflammatory myopathies can all produce different PH mechanisms.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+              <div className="p-3 bg-blue-50 rounded-lg border border-blue-100">
+                <h3 className="font-semibold text-blue-800 text-sm mb-2">Phenotype Before Treatment</h3>
+                <ul className="text-xs text-gray-700 space-y-1">
+                  <li>• Confirm precapillary PH with <strong>RHC</strong></li>
+                  <li>• Decide if the patient best fits <strong>Group 1 vs 2 vs 3 vs 4</strong></li>
+                  <li>• Reassess over time — CTD patients may shift phenotype</li>
+                  <li>• Mild ILD or cardiac disease can completely change treatment meaning</li>
                 </ul>
               </div>
-              <div className="p-3 bg-blue-50 rounded-lg">
-                <h3 className="font-semibold text-blue-800 text-sm">Other CTDs</h3>
+              <div className="p-3 bg-amber-50 rounded-lg border border-amber-100">
+                <h3 className="font-semibold text-amber-800 text-sm mb-2">High-Yield Clues</h3>
+                <ul className="text-xs text-gray-700 space-y-1">
+                  <li>• <strong>Low DLCO</strong>, rising <strong>FVC/DLCO</strong>, RV dilation, NT-proBNP</li>
+                  <li>• ILD burden pushes toward <strong>Group 3</strong></li>
+                  <li>• LV dysfunction / valvular disease pushes toward <strong>Group 2</strong></li>
+                  <li>• V/Q mismatch or thromboembolic history should trigger <strong>Group 4</strong> work-up</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="p-3 bg-red-50 rounded-lg border border-red-100">
+                <h3 className="font-semibold text-red-800 text-sm">SSc-PAH</h3>
                 <ul className="text-xs text-gray-700 mt-1 space-y-1">
-                  <li>• <strong>SLE-PAH:</strong> May respond to immunosuppression + PAH therapy</li>
-                  <li>• <strong>MCTD-PAH:</strong> Similar approach to SSc-PAH</li>
-                  <li>• <strong>Class I:</strong> Treat underlying CTD according to current guidelines</li>
-                  <li>• RHC in all suspected cases</li>
+                  <li>• Prevalence ~8–12% and historically worse prognosis than IPAH</li>
+                  <li>• Annual screening is essential; DETECT-style logic is useful</li>
+                  <li>• Risk markers: <strong>low DLCO</strong>, <strong>FVC/DLCO &gt;1.6</strong>, ACA / anti-U3-RNP, telangiectasia, digital ulcers, NT-proBNP</li>
+                  <li>• SSc patients can also develop <strong>Group 2</strong>, <strong>Group 3</strong>, or mixed phenotypes</li>
+                </ul>
+              </div>
+              <div className="p-3 bg-purple-50 rounded-lg border border-purple-100">
+                <h3 className="font-semibold text-purple-800 text-sm">Other CTDs</h3>
+                <ul className="text-xs text-gray-700 mt-1 space-y-1">
+                  <li>• <strong>SLE-PAH:</strong> immune-active phenotype more plausible; some respond to immunosuppression</li>
+                  <li>• <strong>MCTD-PAH:</strong> often younger; can have vascular + parenchymal + thrombotic overlap</li>
+                  <li>• <strong>pSS-PAH:</strong> rare, but can behave severely</li>
+                  <li>• <strong>RA / inflammatory myopathies:</strong> often PH from non-Group 1 mechanisms</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="card">
+            <h2 className="card-header">SSc Screening & PVOD Overlap</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="p-3 bg-green-50 rounded-lg border border-green-100">
+                <h3 className="font-semibold text-green-800 text-sm">Screening in SSc</h3>
+                <ul className="text-xs text-gray-700 mt-1 space-y-1">
+                  <li>• <strong>Annual screening</strong> is recommended</li>
+                  <li>• Echo + NT-proBNP + pulmonary function trends matter</li>
+                  <li>• DETECT logic is especially useful when disease duration is &gt;3 years and DLCO is reduced</li>
+                  <li>• New dyspnea always deserves full evaluation, even if prior screens were reassuring</li>
+                </ul>
+              </div>
+              <div className="p-3 bg-yellow-50 rounded-lg border border-yellow-200">
+                <h3 className="font-semibold text-yellow-800 text-sm">Think PVOD-Like Disease If…</h3>
+                <ul className="text-xs text-gray-700 mt-1 space-y-1">
+                  <li>• <strong>Very low DLCO</strong></li>
+                  <li>• Resting or severe exertional hypoxemia</li>
+                  <li>• HRCT: septal thickening, mediastinal adenopathy, centrilobular ground-glass opacities</li>
+                  <li>• Vasodilators may worsen pulmonary edema or gas exchange</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="card">
+            <h2 className="card-header">Treatment Nuance in CTD-PAH</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="p-3 bg-blue-50 rounded-lg border border-blue-100">
+                <h3 className="font-semibold text-blue-800 text-sm">PAH Therapy</h3>
+                <ul className="text-xs text-gray-700 mt-1 space-y-1">
+                  <li>• Use standard Group 1 PAH therapy only after phenotype is clear</li>
+                  <li>• Upfront combination therapy is often appropriate in true CTD-PAH</li>
+                  <li>• Routine anticoagulation is <strong>not</strong> recommended in CTD-PAH</li>
+                  <li>• Vasoreactivity testing is usually not helpful in CTD-PAH</li>
+                </ul>
+              </div>
+              <div className="p-3 bg-indigo-50 rounded-lg border border-indigo-100">
+                <h3 className="font-semibold text-indigo-800 text-sm">Immunosuppression</h3>
+                <ul className="text-xs text-gray-700 mt-1 space-y-1">
+                  <li>• <strong>Can help:</strong> SLE-, MCTD-, and sometimes pSS-associated PAH</li>
+                  <li>• <strong>Usually does not help:</strong> classic SSc-PAH</li>
+                  <li>• Treat the underlying rheumatic disease per CTD guidelines, but do not confuse this with proven PAH reversal in SSc</li>
+                </ul>
+              </div>
+              <div className="p-3 bg-pink-50 rounded-lg border border-pink-100">
+                <h3 className="font-semibold text-pink-800 text-sm">Advanced / Emerging</h3>
+                <ul className="text-xs text-gray-700 mt-1 space-y-1">
+                  <li>• <strong>Sotatercept</strong> is promising, but telangiectasia / bleeding issues may matter more in CTD patients</li>
+                  <li>• Early transplant planning is important in progressive disease</li>
+                  <li>• Esophageal dysmotility / aspiration risk can complicate transplant candidacy in SSc</li>
                 </ul>
               </div>
             </div>
