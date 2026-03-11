@@ -989,6 +989,24 @@ export default function SpecialPage() {
               </div>
             </div>
           </div>
+
+          <div className="card">
+            <h2 className="card-header">Key Figures</h2>
+            <div className="space-y-4">
+              <div>
+                <p className="text-sm text-gray-600 mb-2">Figure 1</p>
+                <div className="rounded-lg overflow-hidden border border-slate-200 bg-white">
+                  <Image src="/images/cteph-figure1.png" alt="CTEPH figure 1" width={1600} height={900} className="w-full h-auto" />
+                </div>
+              </div>
+              <div>
+                <p className="text-sm text-gray-600 mb-2">Figure 2</p>
+                <div className="rounded-lg overflow-hidden border border-slate-200 bg-white">
+                  <Image src="/images/cteph-figure2.png" alt="CTEPH figure 2" width={1600} height={900} className="w-full h-auto" />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       )}
 
