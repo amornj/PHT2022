@@ -13,6 +13,7 @@ const tabs = [
   { id: 'portal', label: 'Portal HTN' },
   { id: 'hiv', label: 'HIV' },
   { id: 'chd', label: 'CHD' },
+  { id: 'cteph', label: 'CTEPH' },
   { id: 'pediatric', label: 'Pediatric' },
   { id: 'icu', label: 'ICU / RV Failure' },
 ]
@@ -896,6 +897,267 @@ export default function SpecialPage() {
                 </ul>
               </div>
             </div>
+          </div>
+        </div>
+      )}
+
+      {specialTab === 'cteph' && (
+        <div className="space-y-4">
+          <div className="card border-l-4 border-l-purple-600 bg-purple-50/40">
+            <h2 className="card-header text-purple-800">CTEPH After Pulmonary Embolism</h2>
+            <p className="text-sm text-gray-700 mb-2">
+              Chronic thromboembolic pulmonary hypertension (CTEPH) occurs in <strong>2-3%</strong> of patients following acute PE.
+              Despite known risk factors, mechanisms of clot non-resolution are poorly understood. Systematic follow-up is essential
+              for early detection and identifies less severe disease.
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-2 text-xs">
+              <div className="p-2 bg-white rounded border border-purple-100"><strong>CTEPH</strong><br />2-3% incidence at 2 years</div>
+              <div className="p-2 bg-white rounded border border-purple-100"><strong>CTEPD</strong><br />29-38% with/without PH</div>
+              <div className="p-2 bg-white rounded border border-purple-100"><strong>PPEI</strong><br />16% post-PE impairment</div>
+              <div className="p-2 bg-white rounded border border-purple-100"><strong>PPES</strong><br />56% any post-PE syndrome</div>
+            </div>
+          </div>
+
+          <div className="card">
+            <h2 className="card-header">Definitions & Epidemiology</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3">
+              <div className="p-3 bg-purple-50 rounded-lg border border-purple-100">
+                <h3 className="font-semibold text-purple-800 text-sm mb-2">CTEPH Criteria</h3>
+                <ul className="text-xs text-gray-700 space-y-1">
+                  <li>• <strong>Hemodynamics (RHC):</strong> mPAP &gt;20 mmHg, PAWP ≤15 mmHg, PVR &gt;2 WU</li>
+                  <li>• <strong>Imaging:</strong> Persistent pulmonary artery occlusion (webs, bands, stenoses)</li>
+                  <li>• <strong>Duration:</strong> After ≥3 months anticoagulation post-PE</li>
+                  <li>• <strong>Features:</strong> ± Microvascular remodeling, more severe symptoms than CTEPD</li>
+                </ul>
+              </div>
+              <div className="p-3 bg-blue-50 rounded-lg border border-blue-100">
+                <h3 className="font-semibold text-blue-800 text-sm mb-2">Contemporary Incidence</h3>
+                <ul className="text-xs text-gray-700 space-y-1">
+                  <li>• <strong>FOCUS study (n=1017):</strong> 2.3% cumulative at 2 years</li>
+                  <li>• <strong>OSIRIS study (n=1191):</strong> 2.49% cumulative at 2 years</li>
+                  <li>• <strong>ASPIRE registry (n=1956):</strong> 1.89% at 2 years, 13.2/million/year diagnosis rate</li>
+                  <li>• <strong>Meta-analysis:</strong> Weighted pooled incidence 2.5% (30 studies)</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="p-3 bg-amber-50 rounded-lg border border-amber-100">
+              <h3 className="font-semibold text-amber-800 text-sm mb-2">Related Entities</h3>
+              <ul className="text-xs text-gray-700 space-y-1">
+                <li>• <strong>CTEPD (Chronic Thromboembolic Pulmonary Disease):</strong> Persistent obstruction with/without PH, 29-38% incidence</li>
+                <li>• <strong>PPEI (Post-PE Impairment):</strong> Persistent limitations, 16% incidence. Identifies high-risk (15 of 16 CTEPH had PPEI)</li>
+                <li>• <strong>PPES (Post-PE Syndrome):</strong> Umbrella term for all post-PE sequelae, 56% incidence</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="card">
+            <h2 className="card-header">Pathogenesis — Multiple Mechanisms</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="p-3 bg-red-50 rounded-lg border border-red-100">
+                <h3 className="font-semibold text-red-800 text-sm">Impaired Fibrinolysis (Key)</h3>
+                <ul className="text-xs text-gray-700 mt-1 space-y-1">
+                  <li>• <strong>Fibrinolysis-resistant fibrinogen variants</strong> (rs7659024 GWAS)</li>
+                  <li>• <strong>Increased PAI-1</strong> (plasminogen activator inhibitor-1)</li>
+                  <li>• <strong>Decreased tPA</strong> (tissue plasminogen activator)</li>
+                  <li>• <strong>Elevated TAFI</strong> (thrombin-activatable fibrinolysis inhibitor)</li>
+                  <li>• <strong>ADAMTS13 deficiency</strong> (VWF protease reduced)</li>
+                  <li>• Result: Incomplete clot resolution, organized persistent thrombus</li>
+                </ul>
+              </div>
+
+              <div className="p-3 bg-orange-50 rounded-lg border border-orange-100">
+                <h3 className="font-semibold text-orange-800 text-sm">Failed Neoangiogenesis</h3>
+                <ul className="text-xs text-gray-700 mt-1 space-y-1">
+                  <li>• <strong>Predominant histological finding</strong> in PEA specimens</li>
+                  <li>• <strong>Anti-angiogenic factors increased</strong> in occluded material</li>
+                  <li>• <strong>VEGF-A downregulated</strong> (especially in resistant disease post-procedure)</li>
+                  <li>• <strong>Reduced nitric oxide production</strong></li>
+                  <li>• <strong>Elevated endothelin-1</strong></li>
+                  <li>• Prevents normal PE recanalization by invading vascular cells</li>
+                </ul>
+              </div>
+
+              <div className="p-3 bg-yellow-50 rounded-lg border border-yellow-100">
+                <h3 className="font-semibold text-yellow-800 text-sm">Inflammation</h3>
+                <ul className="text-xs text-gray-700 mt-1 space-y-1">
+                  <li>• <strong>Elevated cytokines:</strong> IL-6, IL-8, IP-10, MMP-9</li>
+                  <li>• <strong>Neutrophil extracellular traps (NETs)</strong> contribute to persistence/fibrosis</li>
+                  <li>• <strong>Staphylococcus aureus</strong> association in some cases</li>
+                  <li>• Impacts cell recruitment, endothelial repair, clot reorganization</li>
+                  <li>• Cytokine reduction post-PEA; lack of reduction = persistent disease</li>
+                </ul>
+              </div>
+
+              <div className="p-3 bg-green-50 rounded-lg border border-green-100">
+                <h3 className="font-semibold text-green-800 text-sm">Secondary Microvasculopathy</h3>
+                <ul className="text-xs text-gray-700 mt-1 space-y-1">
+                  <li>• <strong>Distal vessel remodeling</strong> NOT directly occluded by chronic PE</li>
+                  <li>• Smooth muscle proliferation, intimal thickening, vasoconstriction</li>
+                  <li>• Endothelial proliferation and fibrosis in arterioles/venules</li>
+                  <li>• <strong>Pathological anastomoses</strong> (systemic/bronchial to pulmonary)</li>
+                  <li>• Increased shear stress and vascular pressure</li>
+                  <li>• "PH begets more PH" — progressive process</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="card">
+            <h2 className="card-header">Risk Factors for CTEPH</h2>
+            <div className="space-y-3">
+              <div className="p-3 bg-red-50 rounded-lg border border-red-200">
+                <h3 className="font-semibold text-red-800 text-sm">High Evidence Strength</h3>
+                <ul className="text-xs text-gray-700 mt-1 space-y-1">
+                  <li>• <strong>Previous VTE</strong> (especially large PE) and <strong>recurrent VTE</strong></li>
+                  <li>• <strong>Infected pacemaker/defibrillator wires</strong></li>
+                  <li>• <strong>Splenectomy</strong></li>
+                  <li>• <strong>Unprovoked PE</strong> (no major transient risk factors)</li>
+                </ul>
+              </div>
+
+              <div className="p-3 bg-orange-50 rounded-lg border border-orange-200">
+                <h3 className="font-semibold text-orange-800 text-sm">Moderate Evidence Strength</h3>
+                <ul className="text-xs text-gray-700 mt-1 space-y-1">
+                  <li>• <strong>Anti-phospholipid syndrome</strong> with circulating antibodies (20% of CTEPH)</li>
+                  <li>• <strong>Lupus anticoagulant</strong> positivity</li>
+                  <li>• <strong>Elevated Factor VIII</strong> and <strong>Von Willebrand factor</strong> levels</li>
+                  <li>• <strong>Insufficient anticoagulation</strong></li>
+                  <li>• <strong>Ventriculoatrial shunts</strong>, <strong>malignancy</strong>, <strong>thyroid replacement therapy</strong></li>
+                </ul>
+              </div>
+
+              <div className="p-3 bg-yellow-50 rounded-lg border border-yellow-200">
+                <h3 className="font-semibold text-yellow-800 text-sm">Clinical Presentation Risk Factors</h3>
+                <ul className="text-xs text-gray-700 mt-1 space-y-1">
+                  <li>• <strong>Sub-acute or chronic presentation</strong> (vs acute)</li>
+                  <li>• <strong>RV dysfunction</strong> at index PE</li>
+                  <li>• <strong>Symptom onset &gt;2 weeks before PE diagnosis</strong></li>
+                  <li>• <strong>Diabetes mellitus</strong>, <strong>hypothyroidism</strong></li>
+                  <li>• <strong>Need for thrombolytic therapy or embolectomy</strong></li>
+                  <li>• <strong>Intermediate/high risk</strong> of complications at acute PE</li>
+                </ul>
+              </div>
+
+              <div className="p-3 bg-blue-50 rounded-lg border border-blue-200">
+                <h3 className="font-semibold text-blue-800 text-sm">Other Associations</h3>
+                <ul className="text-xs text-gray-700 mt-1 space-y-1">
+                  <li>• <strong>Non-O blood group</strong> (GWAS finding: 9 common genetic variants)</li>
+                  <li>• <strong>Autoimmune disease</strong> (especially SLE)</li>
+                  <li>• <strong>Chronic inflammatory disorders</strong> (e.g., IBD)</li>
+                  <li>• <strong>Staphylococcal infection</strong></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="card">
+            <h2 className="card-header">Early Detection Strategies</h2>
+            <div className="space-y-3">
+              <div className="p-3 bg-blue-50 rounded-lg border border-blue-200">
+                <h3 className="font-semibold text-blue-800 text-sm">Systematic Follow-Up (Sheffield Model Example)</h3>
+                <ul className="text-xs text-gray-700 mt-1 space-y-1">
+                  <li>• <strong>1-week review:</strong> Malignancy screening, anticoagulation concordance, multidisciplinary discussion</li>
+                  <li>• <strong>3-month review:</strong> Comprehensive assessment (confirm PE, phenotype event, risk factors, symptoms)</li>
+                  <li>• <strong>Result:</strong> ASPIRE registry achieved 13.2/million/year diagnosis rate vs lower rates in non-systematic approaches</li>
+                  <li>• <strong>Key finding:</strong> Dedicated PE clinics identify patients with shorter symptoms, better capacity, less severe hemodynamics</li>
+                </ul>
+              </div>
+
+              <div className="p-3 bg-green-50 rounded-lg border border-green-200">
+                <h3 className="font-semibold text-green-800 text-sm">Assessment at 3 Months</h3>
+                <ul className="text-xs text-gray-700 mt-1 space-y-1">
+                  <li>• <strong>Recovery evaluation:</strong> 30-36% report dyspnea at 6-12 months post-PE</li>
+                  <li>• <strong>Risk factors:</strong> Age, cardiopulmonary disease, BMI, smoking → breathlessness</li>
+                  <li>• <strong>Common causes:</strong> Deconditioning, anxiety, asthma, COPD, LHD (HFpEF), AF</li>
+                  <li>• <strong>Temporal relationship:</strong> Establish if worse than pre-PE functional status</li>
+                  <li>• <strong>Low pre-test probability:</strong> Encourage exercise before further investigation</li>
+                </ul>
+              </div>
+
+              <div className="p-3 bg-purple-50 rounded-lg border border-purple-200">
+                <h3 className="font-semibold text-purple-800 text-sm">Risk Stratification (Klok Score)</h3>
+                <ul className="text-xs text-gray-700 mt-1 space-y-1">
+                  <li>• <strong>Variables (6):</strong> Unprovoked PE, hypothyroidism, symptom onset &gt;2 weeks, RV dysfunction, DM, need for lysis/embolectomy</li>
+                  <li>• <strong>Score ≤6:</strong> Low risk (0.38% incidence) — Sensitivity 91%, Specificity 75%</li>
+                  <li>• <strong>Score &gt;6:</strong> High risk (10% incidence)</li>
+                  <li>• <strong>InShape II algorithm:</strong> Risk score + ECG RV overload OR NT-proBNP → Echo for PH. Failure rate 0.29%</li>
+                  <li>• <strong>InShape IV (updated):</strong> CTPA biomarkers (dilated PA trunk, arterial retraction, web, dilated RV, IVC reflux, mosaic perfusion)</li>
+                </ul>
+              </div>
+
+              <div className="p-3 bg-amber-50 rounded-lg border border-amber-200">
+                <h3 className="font-semibold text-amber-800 text-sm">Diagnostic Workup (If Suspicious)</h3>
+                <ul className="text-xs text-gray-700 mt-1 space-y-1">
+                  <li>• <strong>Echocardiography:</strong> TR jet velocity ≥2.8 m/s, RV size/function, RV/LV ratio, RVSP</li>
+                  <li>• <strong>V/Q scan (preferred):</strong> High sensitivity for CTEPH, mismatched perfusion defects</li>
+                  <li>• <strong>CTPA:</strong> Organized thrombus (webs, bands, stenoses), mosaic perfusion, RV enlargement, dilated PA</li>
+                  <li>• <strong>Right heart catheterization:</strong> ESSENTIAL for diagnosis — confirms PH, excludes LHD (PAWP ≤15), measures PVR</li>
+                  <li>• <strong>NT-proBNP:</strong> If elevated → further investigation</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="card">
+            <h2 className="card-header">Treatment & Management</h2>
+            <div className="space-y-3">
+              <div className="p-3 bg-green-50 rounded-lg border border-green-200">
+                <h3 className="font-semibold text-green-800 text-sm">Current Treatment Options</h3>
+                <ul className="text-xs text-gray-700 mt-1 space-y-1">
+                  <li>• <strong>Lifelong anticoagulation:</strong> Mandatory in all CTEPH patients</li>
+                  <li>• <strong>Pulmonary endarterectomy (PEA):</strong> Gold standard for proximal disease, potentially curative, requires careful patient selection</li>
+                  <li>• <strong>Balloon pulmonary angioplasty (BPA):</strong> For distal disease or inoperable patients, emerging technique, requires expertise</li>
+                  <li>• <strong>Riociguat:</strong> Approved medical therapy for CTEPH</li>
+                  <li>• <strong>PAH medications:</strong> Sometimes used off-label (PDE-5 inhibitors, ERAs, prostacyclins)</li>
+                </ul>
+              </div>
+
+              <div className="p-3 bg-purple-50 rounded-lg border border-purple-200">
+                <h3 className="font-semibold text-purple-800 text-sm">Investigational Therapies (Targeting Pathogenesis)</h3>
+                <ul className="text-xs text-gray-700 mt-1 space-y-1">
+                  <li>• <strong>Fibrinolysis enhancers:</strong> Recombinant tPA, plasminogen activators, PAI-1 inhibitors (tiplaxtinin), TAFI inhibitors (CPI-2KR)</li>
+                  <li>• <strong>Anti-inflammatory:</strong> IL-6 inhibitors, TNF-α inhibitors</li>
+                  <li>• <strong>Nitric oxide donors:</strong> (investigational)</li>
+                </ul>
+              </div>
+
+              <div className="p-3 bg-blue-50 rounded-lg border border-blue-200">
+                <h3 className="font-semibold text-blue-800 text-sm">Treatment Goals</h3>
+                <ul className="text-xs text-gray-700 mt-1 space-y-1">
+                  <li>• Improve hemodynamics (reduce PVR, mPAP)</li>
+                  <li>• Improve functional capacity (6MWD, exercise tolerance)</li>
+                  <li>• Improve quality of life</li>
+                  <li>• Reduce mortality risk</li>
+                </ul>
+              </div>
+
+              <div className="p-3 bg-gray-50 rounded-lg border border-gray-200">
+                <h3 className="font-semibold text-gray-800 text-sm">CTEPD Without PH Management</h3>
+                <ul className="text-xs text-gray-700 mt-1 space-y-1">
+                  <li>• <strong>Natural history:</strong> Recent study showed no major deterioration over 3 years</li>
+                  <li>• <strong>Treatment:</strong> Anticoagulation, surveillance for progression</li>
+                  <li>• <strong>Monitoring:</strong> Serial assessments for development of PH</li>
+                  <li>• <strong>Intervention:</strong> Consider if progression to CTEPH</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="card border-l-4 border-l-blue-600">
+            <h2 className="card-header text-blue-800">Key Clinical Pearls</h2>
+            <ul className="text-sm text-gray-700 space-y-1">
+              <li>• CTEPH incidence is <strong>2-3%</strong> at 2 years post-PE (contemporary prospective studies)</li>
+              <li>• <strong>PPEI identifies high-risk:</strong> 15 of 16 CTEPH patients had PPEI in FOCUS study</li>
+              <li>• <strong>Systematic follow-up increases diagnosis:</strong> 13.2/million/year with dedicated PE clinics</li>
+              <li>• <strong>Mechanisms poorly understood</strong> — no proven prevention strategies exist</li>
+              <li>• <strong>Post-PE syndrome is common:</strong> 56% have persistent symptoms/abnormalities (PPES)</li>
+              <li>• <strong>CTEPD distinct from CTEPH:</strong> 29-38% incidence, may not have PH, stable over 3 years</li>
+              <li>• <strong>V/Q scan preferred</strong> for CTEPH screening (high sensitivity for mismatched perfusion defects)</li>
+              <li>• <strong>RHC essential</strong> for definitive diagnosis (confirms precapillary PH, measures PVR)</li>
+              <li>• <strong>Multiple pathogenic mechanisms:</strong> Impaired fibrinolysis (key), failed angiogenesis, inflammation, secondary microvasculopathy</li>
+              <li>• <strong>Treatment available and effective:</strong> PEA (curative for proximal), BPA (distal), riociguat can significantly improve outcomes</li>
+            </ul>
           </div>
         </div>
       )}
