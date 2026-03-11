@@ -839,6 +839,159 @@ export default function SpecialPage() {
         </div>
       )}
 
+      {specialTab === 'cteph' && (
+        <div className="space-y-4">
+          <div className="card border-l-4 border-l-cyan-600 bg-cyan-50/40">
+            <h2 className="card-header text-cyan-800">CTEPH: Think of It After Pulmonary Embolism</h2>
+            <p className="text-sm text-gray-700 mb-2">
+              <strong>Chronic thromboembolic pulmonary hypertension (CTEPH)</strong> is a serious, potentially treatable cause of PH caused by
+              persistent pulmonary arterial obstruction with fibrotic clot plus secondary microvascular remodeling.
+              It is usually considered after <strong>&gt;3 months of anticoagulation</strong> when symptoms, perfusion defects, or PH persist after PE.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-2 text-xs">
+              <div className="p-2 bg-white rounded border border-cyan-100"><strong>After PE</strong><br />Typical cumulative incidence ~2–3% at 2 years</div>
+              <div className="p-2 bg-white rounded border border-cyan-100"><strong>Potentially curable</strong><br />Pulmonary endarterectomy remains the key definitive therapy</div>
+              <div className="p-2 bg-white rounded border border-cyan-100"><strong>Do not miss it</strong><br />V/Q scanning is central to screening</div>
+              <div className="p-2 bg-white rounded border border-cyan-100"><strong>Team disease</strong><br />Management belongs in an expert multidisciplinary CTEPH center</div>
+            </div>
+          </div>
+
+          <div className="card">
+            <h2 className="card-header">Definitions After PE</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
+                <h3 className="font-semibold text-slate-800 text-sm">PPEI</h3>
+                <p className="text-xs text-gray-700 mt-1">Post-pulmonary embolism impairment: persistent symptoms / functional or imaging abnormalities suggesting incomplete recovery.</p>
+              </div>
+              <div className="p-3 bg-amber-50 rounded-lg border border-amber-100">
+                <h3 className="font-semibold text-amber-800 text-sm">CTEPD</h3>
+                <p className="text-xs text-gray-700 mt-1">Symptomatic chronic thromboembolic disease with mismatched perfusion defects and organized fibrotic clot on imaging, <strong>with or without PH</strong>.</p>
+              </div>
+              <div className="p-3 bg-red-50 rounded-lg border border-red-100">
+                <h3 className="font-semibold text-red-800 text-sm">CTEPH</h3>
+                <p className="text-xs text-gray-700 mt-1"><strong>mPAP &gt;20 mmHg</strong>, <strong>PAWP ≤15 mmHg</strong>, <strong>PVR &gt;2 WU</strong> on RHC, plus chronic thromboembolic obstruction after adequate anticoagulation.</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="card">
+            <h2 className="card-header">When to Suspect CTEPH</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="p-3 bg-blue-50 rounded-lg border border-blue-100">
+                <h3 className="font-semibold text-blue-800 text-sm mb-2">Clinical clues after PE</h3>
+                <ul className="text-xs text-gray-700 space-y-1">
+                  <li>• Persistent or worsening dyspnea after PE</li>
+                  <li>• Reduced exercise tolerance, fatigue, or RV-failure symptoms</li>
+                  <li>• Delayed recovery despite anticoagulation</li>
+                  <li>• New PH / RV strain on echocardiography</li>
+                  <li>• Mismatched perfusion defects on lung imaging</li>
+                </ul>
+              </div>
+              <div className="p-3 bg-purple-50 rounded-lg border border-purple-100">
+                <h3 className="font-semibold text-purple-800 text-sm mb-2">Practical risk context</h3>
+                <ul className="text-xs text-gray-700 space-y-1">
+                  <li>• No prior symptomatic PE is required — some patients present without a clear PE history</li>
+                  <li>• Follow-up pathways after acute PE improve case detection</li>
+                  <li>• Systematic symptom review matters because milder hemodynamic disease is otherwise easy to miss</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="card">
+            <h2 className="card-header">Screening Pathway</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="p-3 bg-green-50 rounded-lg border border-green-100">
+                <h3 className="font-semibold text-green-800 text-sm mb-2">Best screening test</h3>
+                <ul className="text-xs text-gray-700 space-y-1">
+                  <li>• <strong>V/Q scan</strong> is the key screening test for chronic thromboembolic disease</li>
+                  <li>• A normal perfusion scan makes CTEPH unlikely</li>
+                  <li>• Use echo and symptoms alongside perfusion imaging in post-PE follow-up</li>
+                </ul>
+              </div>
+              <div className="p-3 bg-yellow-50 rounded-lg border border-yellow-100">
+                <h3 className="font-semibold text-yellow-800 text-sm mb-2">What CTPA adds</h3>
+                <ul className="text-xs text-gray-700 space-y-1">
+                  <li>• CTPA helps define anatomy and chronic fibrotic clot burden</li>
+                  <li>• Look for <strong>webs, slits, stenoses, pouch lesions, bands</strong>, and mosaic perfusion</li>
+                  <li>• CTPA does <strong>not</strong> replace V/Q as the main screening tool</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="card">
+            <h2 className="card-header">Core Management Framework</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="p-3 bg-red-50 rounded-lg border border-red-100">
+                <h3 className="font-semibold text-red-800 text-sm">Pulmonary Endarterectomy (PEA)</h3>
+                <ul className="text-xs text-gray-700 mt-1 space-y-1">
+                  <li>• First consideration for operable disease</li>
+                  <li>• Potentially curative in expert centers</li>
+                  <li>• Operability depends on lesion accessibility, hemodynamics, comorbidity, and center expertise</li>
+                </ul>
+              </div>
+              <div className="p-3 bg-indigo-50 rounded-lg border border-indigo-100">
+                <h3 className="font-semibold text-indigo-800 text-sm">Balloon Pulmonary Angioplasty (BPA)</h3>
+                <ul className="text-xs text-gray-700 mt-1 space-y-1">
+                  <li>• Important option for inoperable disease or residual PH after PEA</li>
+                  <li>• Best delivered as staged procedures in experienced centers</li>
+                  <li>• Particularly useful for distal obstructive lesions</li>
+                </ul>
+              </div>
+              <div className="p-3 bg-blue-50 rounded-lg border border-blue-100">
+                <h3 className="font-semibold text-blue-800 text-sm">Medical therapy</h3>
+                <ul className="text-xs text-gray-700 mt-1 space-y-1">
+                  <li>• <strong>Riociguat</strong> is the key approved targeted therapy for inoperable / persistent CTEPH</li>
+                  <li>• Use lifelong anticoagulation unless contraindicated</li>
+                  <li>• Other PH drugs are not a substitute for proper operability assessment</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="card">
+            <h2 className="card-header">Why the Multidisciplinary CTEPH Team Matters</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
+                <h3 className="font-semibold text-slate-800 text-sm mb-2">Every patient needs expert review</h3>
+                <ul className="text-xs text-gray-700 space-y-1">
+                  <li>• Operability is not just an imaging question</li>
+                  <li>• Needs integrated review by PH physicians, PEA surgeons, BPA experts, radiology, and hemodynamics teams</li>
+                  <li>• Centralized review improves access to curative or near-curative options</li>
+                </ul>
+              </div>
+              <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
+                <h3 className="font-semibold text-slate-800 text-sm mb-2">Follow-up after acute PE</h3>
+                <ul className="text-xs text-gray-700 space-y-1">
+                  <li>• Do not discharge symptomatic patients into silence</li>
+                  <li>• Post-PE pathways should reassess symptoms, functional recovery, and echo/perfusion findings</li>
+                  <li>• Early identification detects less advanced disease</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="card">
+            <h2 className="card-header">High-Yield Pearls / Pitfalls</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="p-3 bg-amber-50 rounded-lg border border-amber-100">
+                <h3 className="font-semibold text-amber-800 text-sm">Pearl</h3>
+                <p className="text-xs text-gray-700 mt-1">Persistent dyspnea after PE should trigger structured reassessment; not everything is deconditioning.</p>
+              </div>
+              <div className="p-3 bg-amber-50 rounded-lg border border-amber-100">
+                <h3 className="font-semibold text-amber-800 text-sm">Pearl</h3>
+                <p className="text-xs text-gray-700 mt-1">A normal V/Q scan is far more reassuring than a “not obvious” CTPA when excluding CTEPH.</p>
+              </div>
+              <div className="p-3 bg-red-50 rounded-lg border border-red-100">
+                <h3 className="font-semibold text-red-800 text-sm">Pitfall</h3>
+                <p className="text-xs text-gray-700 mt-1">Starting PH drugs without expert CTEPH-team review can delay PEA or BPA in patients who may benefit from intervention.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       {specialTab === 'hiv' && (
         <div className="space-y-4">
           <div className="card">
